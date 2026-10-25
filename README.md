@@ -18,13 +18,20 @@
 
 ## 📌 Overview
 
-Safe adversary technique simulation (Linux)
+
+OSharp is a purple-team adversary-simulation tool for Linux that safely reproduces common attacker techniques for detection engineering. It runs non-destructively and keeps lateral simulation to localhost and private IPs by default. Each technique is mapped to MITRE ATT&CK (T1055, T1003, T1059, T1105, T1071.001 and more) so blue teams can validate their telemetry.
 
 ---
 
 ## ✨ Features
 
-- Safe Linux adversary technique simulator (non-destructive, lab defaults)
+
+- Safe simulation of MITRE techniques: process injection, credential access, command execution, ingress transfer and C2 patterns
+- Strictly non-destructive — no real exploitation, brute force, credentials or persistence
+- Lateral-movement simulation restricted to localhost / private IPs by default
+- Automatic cleanup of every file it creates, with strict timeouts and output capture on all subprocess calls
+- JSON reporting plus a persistent osharp.cfg configuration and osharp_reports output directory
+- Offline, sandboxed --self-test mode for verifying the engine without a target
 
 ---
 
@@ -37,8 +44,11 @@ Safe adversary technique simulation (Linux)
 
 ## 🚀 Usage
 
+
 ```bash
 ./OSharp
+./OSharp --self-test
+./OSharp --help
 ```
 
 ---
